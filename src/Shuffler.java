@@ -12,6 +12,7 @@ public class Shuffler {
 
     /**
      * Tests shuffling methods.
+     *
      * @param args is not used.
      */
     public static void main(String[] args) {
@@ -47,10 +48,11 @@ public class Shuffler {
      * Apply a "perfect shuffle" to the argument.
      * The perfect shuffle algorithm splits the deck in half, then interleaves
      * the cards in one half with the cards in the other.
+     *
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
     }
 
     /**
@@ -62,10 +64,16 @@ public class Shuffler {
      * selected and add it to the selected cards.
      * An efficient version of this algorithm makes use of arrays to avoid
      * searching for an as-yet-unselected card.
+     *
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        for (int k = (shuffled) - 1; k >= 0; k--) {
+            int r = (int) (Math.random() * k);
+            int tmp = values[r];
+            values[r] = values[k];
+            values[k] = tmp;
+        }
     }
 }
-
