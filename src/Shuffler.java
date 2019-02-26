@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -50,7 +52,17 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        ArrayList<Integer> shuffled= new ArrayList<>();
+        int k=0;
+        while(k<values.length/2){
+            shuffled.add(values[k]);
+            k+=2;
+        }
+        k=1;
+        while(k<values.length){
+            shuffled.add(values[k]);
+            k+=2;
+        }
     }
 
     /**
@@ -65,7 +77,12 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+        for (int k = values.length-1; k >= 1; k--) {
+            int r = (int) (Math.random() * k);
+            int tmp = values[r];
+            values[r] = values[k];
+            values[k] = tmp;
+        }
     }
 }
 
