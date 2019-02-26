@@ -52,17 +52,26 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void perfectShuffle(int[] values) {
-        ArrayList<Integer> shuffled= new ArrayList<>();
         int k=0;
-        while(k<values.length/2){
-            shuffled.add(values[k]);
-            k+=2;
+        int mid=values.length/2;
+        int[] shuffled1=new int[mid];
+        int[] shuffled2=new int[mid];
+        int[] finalshuffle=new int[values.length];
+        for(int i=0;i<mid;i++){
+            shuffled1[i]=values[i];
         }
-        k=1;
+        for(int j=mid+1;j<values.length;j++){
+            shuffled2[j]=values[j];
+        }
         while(k<values.length){
-            shuffled.add(values[k]);
-            k+=2;
+            if(k%2==0){
+                finalshuffle[k]=shuffled1[k];
+            }
+            else{
+                finalshuffle[k]=shuffled2[k-1];
+            }
         }
+
     }
 
     /**
