@@ -69,7 +69,7 @@ public class Shuffler {
      */
     public static void selectionShuffle(int[] values) {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-        for (int k = (shuffled) - 1; k >= 0; k--) {
+        for (int k = 51; k >= 1; k--) {
             int r = (int) (Math.random() * k);
             int tmp = values[r];
             values[r] = values[k];
