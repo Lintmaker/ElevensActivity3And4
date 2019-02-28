@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class provides a convenient way to test shuffling methods.
@@ -90,6 +91,18 @@ public class Shuffler {
             int tmp = values[r];
             values[r] = values[k];
             values[k] = tmp;
+        }
+    }
+
+    public static void selectionShuffle(List<Card>cards) {
+        for (int k = cards.size()-1; k >= 1; k--) {
+            int r = (int) (Math.random() * k);
+            Card tmp = cards.get(r);
+            cards.set(r,cards.get(k));
+            cards.set(k,tmp);
+        }
+        for(int x=0;x<cards.size();x++){
+            cards.get(x).toString();
         }
     }
 }
